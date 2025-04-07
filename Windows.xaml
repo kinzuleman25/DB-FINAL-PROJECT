@@ -1,0 +1,142 @@
+﻿<Window x:Class="WpfApp6.Windows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Windows" 
+        Height="800" Width="1200" 
+        Background="White" WindowStartupLocation="CenterScreen">
+
+    <!-- Global Styles -->
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Global Serif"/>
+            <Setter Property="Foreground" Value="#2C4375"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Global Serif"/>
+            <Setter Property="Background" Value="#FFC107"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <!-- Define Rows -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <!-- Navbar -->
+            <RowDefinition Height="Auto"/>
+            <!-- Title -->
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+            <!-- Content -->
+        </Grid.RowDefinitions>
+
+        <!-- Navbar -->
+        <Grid Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <!-- For the company name -->
+                <ColumnDefinition Width="*" />
+                <!-- Spacer -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- For navigation buttons -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Company Name -->
+            <TextBlock Text="Smajor Glazing" FontSize="24" FontWeight="Bold"
+               Foreground="#2C4375" Margin="20,0,40,0" VerticalAlignment="Center"
+               Grid.Column="0"/>
+
+            <!-- Navigation Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"
+                Margin="10" Grid.Column="2">
+                <Button Content="Home" Background="Transparent" Foreground="#2C4375" BorderThickness="0" Width="163" FontWeight="Bold" Click="Button_Click_3"/>
+                <Button Content="Projects" Background="Transparent" Foreground="#2C4375" BorderThickness="0" Width="172" FontWeight="Bold"  Click="ProjectsButton_Click"/>
+                <Button Content="Feedback" Background="Transparent" Foreground="#2C4375" BorderThickness="0" Width="165" FontWeight="Bold" Click="Button_Click_4"/>
+                <Button Content="My profile" Background="Transparent" Foreground="#2C4375" BorderThickness="0" Width="223" FontWeight="Bold" Click="MyProfileButton_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Title and Description -->
+        <Image Margin="0,10,0,385" Grid.RowSpan="2" Source="/Assets/window.png" Stretch="Fill" Grid.Row="1" Opacity="0.5"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,80,0,80" Width="620">
+            <TextBlock Text="Explore Windows of All Types." 
+   FontSize="40" 
+   FontWeight="Bold"
+   HorizontalAlignment="Center"
+   Foreground="#FFC107">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Gray" 
+              BlurRadius="5" 
+              ShadowDepth="2" 
+              Opacity="0.7"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Text="Bring us your inspiration and we will match you with the perfect type of windows."
+   FontSize="24" 
+   TextAlignment="Center"
+   Foreground="#2C4375" Width="706">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Gray" 
+              BlurRadius="4" 
+              ShadowDepth="1" 
+              Opacity="0.6"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock Text=".." FontSize="24" FontWeight="Bold" 
+   HorizontalAlignment="Center" Margin="0,20,0,10"
+   Foreground="#FFC107"/>
+
+        </StackPanel>
+
+        <!-- Windows Showcase -->
+        <StackPanel Grid.Row="1" Margin="40,314,40,-75" Grid.RowSpan="3">
+            <TextBlock Text="Our Windows" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+
+            <!-- Updated: Increased spacing using WrapPanel -->
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+
+                <!-- Window 1 -->
+                <StackPanel Width="250" Margin="20,10,20,10">
+                    <Border Background="#E5E5E5" Width="250" Height="169" >
+                        <Image Margin="0,0,10,0" Source="/Assets/fibre window.png" Stretch="Fill"/>
+                    </Border>
+                    <TextBlock Text="Fibre Glass - Hung" FontSize="18" Margin="0,10,0,0"/>
+                    <TextBlock Text="From $861.93" FontSize="16"/>
+                    <Button Content="Submit Request" Margin="0,10,65,0" Click="Button_Click"/>
+                </StackPanel>
+
+                <!-- Window 2 -->
+                <StackPanel Width="250" Margin="20,10,20,10">
+                    <Border Background="#E5E5E5" Width="250" Height="174">
+                        <Image Margin="0,0,0,10" Source="/Assets/wood double.png" Stretch="Fill"/>
+                    </Border>
+                    <TextBlock Text="Wood Double-Hung" FontSize="18" Margin="0,10,0,0"/>
+                    <TextBlock Text="From $2,715" FontSize="16"/>
+                    <Button Content="Submit Request" Margin="0,10,65,0" Click="Button_Click_1"/>
+                </StackPanel>
+
+                <!-- Window 3 -->
+                <StackPanel Width="250" Margin="20,10,20,10">
+                    <Border Background="#E5E5E5" Width="250" Height="179">
+                        <Image Margin="0,0,-100,0" Source="/Assets/vinyl.png" Stretch="Fill"/>
+                    </Border>
+                    <TextBlock Text="Vinyl Window" FontSize="18" Margin="0,10,0,0"/>
+                    <TextBlock Text="From $1,715" FontSize="16"/>
+                    <Button Content="Submit Request" Margin="0,10,65,0" Click="Button_Click_2"/>
+                </StackPanel>
+
+            </WrapPanel>
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,57 @@
+﻿<Window x:Class="WpfApp6.track_projects"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="track_projects" Height="1024" Width="1920">
+    <Grid>
+        <Button Content="Home" Background="Transparent" Foreground="#2C4375" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="20"  Margin="1048,25,712,893" FontWeight="Bold"  Click="Button_Click"/>
+        <Button Content=" Projects" Background="Transparent" Foreground="#2C4375" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="20" Margin="1230,28,503,895" FontWeight="Bold"/>
+        <Button Content="Feedback" Background="Transparent" Foreground="#2C4375" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="20" Margin="1450,29,263,904" RenderTransformOrigin="0.607,1" FontWeight="Bold" Click="Button_Click_4"/>
+        <Button Content="My profile" Background="Transparent" Foreground="#2C4375" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="20" Margin="1656,28,44,904" FontWeight="Bold" Click="MyProfileButton_Click"/>
+        <Label Content="Smajor Glazing" Background="Transparent" Foreground="#2C4375" FontSize="32"
+                    FontFamily="Global Serif" BorderThickness="0" Padding="20"  Margin="94,25,1518,895" FontWeight="Bold"/>
+        <DataGrid ItemsSource="{Binding OrdersList}" AutoGenerateColumns="False" Margin="35,360,44,72">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FFC107"/>
+                    <Setter Property="FontSize" Value="22"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Foreground" Value="#2c4375"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="FontFamily" Value="Global Serif"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="S.NO" Binding="{Binding ClientName}" Width="*"/>
+                <DataGridTextColumn Header="Order ID" Binding="{Binding ClientID}" Width="*"/>
+                <DataGridTextColumn Header="Started on " Binding="{Binding ArticleNo}" Width="*"/>
+                <DataGridTextColumn Header="Ended on" Binding="{Binding Material}" Width="*"/>
+                <DataGridTextColumn Header="Amount Paid" Binding="{Binding Size}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+        <!-- First Pie Chart -->
+        <lvc:PieChart Margin="1533,94,-12,675">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Completed" Values="{Binding CompletedOrders}" Fill="Green"/>
+                <lvc:PieSeries Title="Pending" Values="{Binding PendingOrders}" Fill="Red"/>
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <Label Content="Total Projects"  FontSize="32" Margin="35,177,0,0" FontWeight="Bold" Foreground="#2c4375" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Global Serif" Height="139"  Width="237"/>
+        <Label Content="Completed"  FontSize="32" Margin="680,177,0,0" FontWeight="Bold" Foreground="#2c4375" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Global Serif" Height="138"  Width="237"/>
+        <Label Content="Pending"  FontSize="32" Margin="368,177,0,0" FontWeight="Bold" Foreground="#2c4375" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Global Serif" Height="138"  Width="237"/>
+
+    </Grid>
+</Window>

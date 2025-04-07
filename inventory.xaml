@@ -1,0 +1,72 @@
+﻿<Window x:Class="WpfApp6.inventory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="inventory" Height="1024" Width="1920" Background="White">
+    <Grid>
+        <!-- Left Panel (Profile and Buttons) -->
+        <Grid Background="#EAEAEA" Width="300" HorizontalAlignment="Left">
+            <StackPanel VerticalAlignment="Top">
+                <!-- Profile Section -->
+                <Ellipse Width="100" Height="100" Fill="Gray" Margin="100,20,100,10"/>
+                <Button Content="OWAIS SHEHZAD" FontSize="16" FontFamily="Global Serif"
+Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
+
+                <!-- Yellow Buttons -->
+                <Button Background="#FFC107" BorderThickness="0" Content="DASHBOARD"  Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="DashboardButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107"  BorderThickness="0"  Content="MANAGE PROJECTS"  Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="ManageProjectsButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107"  BorderThickness="0"  Content="INVENTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="InventoryButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107"  BorderThickness="0"  Content="PROJECT HISTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24"  Click="ProjectHistoryButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107"  BorderThickness="0"  Content="PAYMENT MANAGEMENT" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24"  Click="PaymentManagmentButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107"  BorderThickness="0"  Content="ORDER REQUESTS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24"  Click="OrderRequestsButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107"  BorderThickness="0"  Content="FEEDBACKS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="FeedbacksButton_Click" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- DataGrid -->
+        <DataGrid ItemsSource="{Binding OrdersList}" AutoGenerateColumns="False" Margin="345,422,50,74" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FFC107"/>
+                    <Setter Property="FontSize" Value="22"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Foreground" Value="#2c4375"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="FontFamily" Value="Global Serif"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="S.NO" Binding="{Binding ClientName}" Width="*"/>
+                <DataGridTextColumn Header="PRODUCT" Binding="{Binding ClientID}" Width="*"/>
+                <DataGridTextColumn Header="BRAND NAME" Binding="{Binding ArticleNo}" Width="*"/>
+                <DataGridTextColumn Header="QUANTITY" Binding="{Binding Material}" Width="*"/>
+                <DataGridTextColumn Header="VALUE" Binding="{Binding Size}" Width="*"/>
+                <DataGridTextColumn Header="REQUEST" Binding="{Binding Size}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        
+       
+        <!-- Inventory Bar Chart -->
+        <lvc:CartesianChart Name="InventoryChart" Margin="388,31,92,619">
+            <lvc:CartesianChart.Series>
+                <lvc:ColumnSeries Title="Stock Levels"
+                                  Values="{Binding StockValues}"
+                                  Fill="#2c4375"/>
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Products"
+                          Labels="Product A,Product B,Product C,Product D,Product E"/>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Quantity"/>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
+
+    </Grid>
+</Window>

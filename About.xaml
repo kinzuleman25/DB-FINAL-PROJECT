@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp6.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="About" Height="1080" Width="1920">
+    <Grid>
+
+        <Button Content="Home" HorizontalAlignment="Left" Margin="1064,7,0,0" VerticalAlignment="Top" Width="174" Height="65" Background="White" FontFamily="Global Serif" FontSize="40" FontWeight="Bold" Foreground="#FF2C4375" Click="HomeButton_Click" BorderThickness="0,0,0,0"/>
+        <Button Content="About Us" HorizontalAlignment="Left" Margin="1545,10,0,0" VerticalAlignment="Top" Width="178" Height="59" Background="White" FontFamily="Global Serif" FontSize="40" FontWeight="Bold" Foreground="#FF2C4375" BorderThickness="0,0,0,0"/>
+
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="97" VerticalAlignment="Top" Width="1930" Margin="-10,0,0,0">
+            <Label Content="Label" Margin="-198,270,198,-270"/>
+        </Border>
+        <Label Content="About  Smajor Glazing" HorizontalAlignment="Left" Margin="52,175,0,0" VerticalAlignment="Top" Height="97" Width="715" FontFamily="Global Serif" FontSize="65" FontWeight="Bold" Foreground="#FF2C4375"/>
+        <Label Content="    Your Comfort is Our Priority" HorizontalAlignment="Left" Margin="1085,302,0,0" VerticalAlignment="Top" Height="83" Width="757" FontSize="48" FontFamily="Global Serif" FontWeight="Bold" Foreground="#FFFFC107"/>
+        <Label Content="At the heart of our company is a commitment&#xD;&#xA;to your comfort and satisfaction specializing in &#xD;&#xA;pvc and Aluminium  windows and doors.&#xD;&#xA;We prioritize excellence in every aspect of&#xD;&#xA;our work .Our team is dedicated to delivering&#xD;&#xA;products that not only meet but exceed your&#xD;&#xA;expectations ." HorizontalAlignment="Left" Margin="1137,408,0,0" VerticalAlignment="Top" RenderTransformOrigin="8.078,4.8" Height="375" Width="687" FontSize="36" FontFamily="Global Serif" Foreground="#FF2C4375"/>
+        <Rectangle HorizontalAlignment="Left" Height="693" Margin="52,277,0,0" Stroke="Black" VerticalAlignment="Top" Width="472" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Assets/Sky Rye Design.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="260,524,0,0" Stroke="Black" VerticalAlignment="Top" Width="422" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Assets/about.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="292" Margin="487,408,0,0" Stroke="Black" VerticalAlignment="Top" Width="316" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Assets/Sky Rye Design.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="270" Margin="646,700,0,0" Stroke="Black" VerticalAlignment="Top" Width="314" StrokeThickness="0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/Assets/door.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Years" HorizontalAlignment="Left" Margin="1137,831,0,0" VerticalAlignment="Top" Height="56" Width="203" Foreground="#FFFFC107" FontSize="46" FontFamily="Global Serif" FontWeight="Bold"/>
+        <Label Content="10+" HorizontalAlignment="Left" Margin="1154,883,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Global Serif" FontWeight="Bold" Foreground="#FF2C4375" RenderTransformOrigin="0.878,0.21"/>
+        <Label Content="Happy Clients" HorizontalAlignment="Left" Margin="1340,825,0,0" VerticalAlignment="Top" Width="316" Height="62" Foreground="#FFFFC107" FontFamily="Global Serif" FontSize="46" FontWeight="Bold"/>
+        <Label Content="780+" HorizontalAlignment="Left" Margin="1415,887,0,0" VerticalAlignment="Top" Height="49" Width="166" Foreground="#FF2C4375" FontSize="36" FontFamily="Global Serif" FontWeight="Bold"/>
+        <Label Content="Projects" HorizontalAlignment="Left" Margin="1694,825,0,0" VerticalAlignment="Top" Width="203" Height="62" Foreground="#FFFFC107" FontSize="46" FontFamily="Global Serif" FontWeight="Bold"/>
+        <Label Content="   830+" HorizontalAlignment="Left" Margin="1709,885,0,0" VerticalAlignment="Top" Height="53" Width="150" FontSize="36" FontWeight="Bold" FontFamily="Global Serif" Foreground="#FF2C4375" RenderTransformOrigin="0.248,-0.43"/>
+        <Label Content="Smajor Glazing" HorizontalAlignment="Left" Margin="52,13,0,0" VerticalAlignment="Top" Height="62" Width="310" Foreground="#FF2C4375" FontFamily="Global Serif" FontSize="40" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

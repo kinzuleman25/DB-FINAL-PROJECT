@@ -1,0 +1,103 @@
+﻿<Window x:Class="WpfApp6.home1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="home"
+        Height="1080" Width="1920"
+        WindowState="Maximized"
+        Background="White">
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="/Assets/bg.png"
+               Stretch="Fill"
+               Opacity="0.70"
+               Panel.ZIndex="-1"/>
+
+        <!-- Main Layout Grid -->
+        <Grid>
+            <!-- Define Rows -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Navigation Bar -->
+                <RowDefinition Height="*"/>
+                <!-- Main Content -->
+                <RowDefinition Height="Auto"/>
+                <!-- Footer -->
+            </Grid.RowDefinitions>
+
+            <!-- Navigation Bar -->
+            <DockPanel Grid.Row="0" Background="White" Height="60" VerticalAlignment="Top" LastChildFill="False">
+                <!-- Logo -->
+                <TextBlock Text="Smajor Glazing"
+                           FontFamily="Global Serif"
+                           Foreground="#14213D"
+                           FontSize="24" FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           Margin="20,0,30,0"
+                           DockPanel.Dock="Left"/>
+
+                <!-- Navigation Links -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="40,0,40,0">
+                    <Button Content="Home" Background="Transparent" Foreground="#14213D" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold"/>
+                    <Button Content="Projects" Background="Transparent" Foreground="#14213D" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="ProjectsButton_Click" />
+                    <Button Content="Feedback" Background="Transparent" Foreground="#14213D" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" Height="54" FontWeight="Bold" Click="Button_Click"/>
+                    <Button Content="My Profile" Background="Transparent" Foreground="#14213D" FontSize="32"
+                            FontFamily="Global Serif" BorderThickness="0" Padding="20" Width="223" Height="79" FontWeight="Bold" Click="MyProfileButton_Click"/>
+                </StackPanel>
+            </DockPanel>
+
+            <!-- Main Content -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="1140">
+                <!-- Title -->
+                <TextBlock Text="Windows and Doors" FontSize="70" FontWeight="Bold"
+                           FontFamily="Global Serif"
+                           Foreground="#14213D" TextAlignment="Center"/>
+
+                <!-- Subtitle -->
+                <TextBlock Text="Custom crafted for your vision" FontSize="43.75"
+                           FontFamily="Global Serif"
+                           Foreground="#14213D" TextAlignment="Center" Margin="0,5,0,30"/>
+                <TextBlock Text="At Smajor Glazing, we turn vision into reality. We take exceptional care to deliver the highest quality ."
+                           FontSize="27" FontFamily="Global Serif"
+                           Foreground="#14213D" TextAlignment="Center" Height="107" Width="1170"/>
+
+                <!-- Description -->
+
+                <!-- Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,20">
+                    <Button Content="Explore Windows"
+                            Width="250" Height="60"
+                            Margin="30"
+                            Background="#FFC107"
+                            Foreground="Black"
+                            FontSize="28"
+                            FontFamily="Global Serif"
+                            FontWeight="Bold"
+                            Click="ExploreWindows_Click"/>
+
+                    <Button Content="Explore Doors"
+                            Width="250" Height="60"
+                            Margin="30"
+                            Background="#FFC107"
+                            Foreground="Black"
+                            FontSize="28"
+                            FontFamily="Global Serif"
+                            FontWeight="Bold"
+                            Click="ExploreDoors_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Footer -->
+            <TextBlock Grid.Row="2" Text="Let's make your project easier with Smajor."
+                       FontSize="28"
+                       FontFamily="Global Serif"
+                       Foreground="#14213D"
+                       TextAlignment="Center"
+                       FontWeight="Bold"
+                       Margin="0,20,0,20"/>
+        </Grid>
+    </Grid>
+</Window>
