@@ -23,14 +23,14 @@
             <StackPanel VerticalAlignment="Top">
                 <Ellipse Width="100" Height="100" Fill="Gray" Margin="100,20,100,10"/>
                 <Button Content="OWAIS SHEHZAD" FontSize="16" FontFamily="Global Serif"
-Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
-                <Button Background="#FFC107" BorderThickness="0" Content="DASHBOARD"  Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="DashboardButton_Click" FontWeight="Bold"/>
-                <Button Background="#FFC107"  BorderThickness="0"  Content="MANAGE PROJECTS"  Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="ManageProjectsButton_Click" FontWeight="Bold"/>
-                <Button Background="#FFC107"  BorderThickness="0"  Content="INVENTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="InventoryButton_Click" FontWeight="Bold"/>
-                <Button Background="#FFC107"  BorderThickness="0"  Content="PROJECT HISTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24"  Click="ProjectHistoryButton_Click" FontWeight="Bold"/>
-                <Button Background="#FFC107"  BorderThickness="0"  Content="PAYMENT MANAGEMENT" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24"  Click="PaymentManagmentButton_Click" FontWeight="Bold"/>
-                <Button Background="#FFC107"  BorderThickness="0"  Content="ORDER REQUESTS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24"  Click="OrderRequestsButton_Click" FontWeight="Bold"/>
-                <Button Background="#FFC107"  BorderThickness="0"  Content="FEEDBACKS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="FeedbacksButton_Click" FontWeight="Bold"/>
+                        Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="DASHBOARD" Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="DashboardButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="MANAGE PROJECTS" Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="ManageProjectsButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="INVENTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="InventoryButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="PROJECT HISTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="ProjectHistoryButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="PAYMENT MANAGEMENT" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="PaymentManagmentButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="ORDER REQUESTS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="OrderRequestsButton_Click" FontWeight="Bold"/>
+                <Button Background="#FFC107" BorderThickness="0" Content="FEEDBACKS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="FeedbacksButton_Click" FontWeight="Bold"/>
             </StackPanel>
         </Grid>
 
@@ -48,12 +48,13 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="S.NO" Binding="{Binding ClientName}" Width="*"/>
-                <DataGridTextColumn Header="Client ID" Binding="{Binding ClientID}" Width="*"/>
-                <DataGridTextColumn Header="ORDER ID" Binding="{Binding ArticleNo}" Width="*"/>
-                <DataGridTextColumn Header="STATUS" Binding="{Binding Material}" Width="*"/>
-                <DataGridTextColumn Header="STARTING DATE" Binding="{Binding Size}" Width="*"/>
-                <DataGridTextColumn Header="COMPLETION DATE" Binding="{Binding Size}" Width="*"/>
+                <DataGridTextColumn Header="S.NO" Binding="{Binding SNo}" Width="*"/>
+                <DataGridTextColumn Header="Client ID" Binding="{Binding ClientId}" Width="*"/>
+                <DataGridTextColumn Header="Project ID" Binding="{Binding ProjectId}" Width="*"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
+                <DataGridTextColumn Header="Starting Date" Binding="{Binding StartDate}" Width="*"/>
+                <DataGridTextColumn Header="Completion Date" Binding="{Binding EndDate}" Width="*"/>
+                <DataGridTextColumn Header="Budget" Binding="{Binding Budget}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -67,14 +68,6 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
 
         <!-- Stack Panel for Pie Charts -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="700,44,0,678" Width="940">
-            <!-- First Pie Chart -->
-
-            <!-- Second Pie Chart -->
-            <!-- First Pie Chart -->
-
-            <!-- Second Pie Chart -->
-            <!-- First Pie Chart -->
-            <!-- First Pie Chart -->
             <lvc:PieChart Width="300" Height="188">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries Title="Completed" Values="{Binding CompletedOrders}" Fill="Green"/>
@@ -87,9 +80,6 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
                     <lvc:PieSeries Title="Processing" Values="{Binding ProcessingOrders}" Fill="Orange"/>
                 </lvc:PieChart.Series>
             </lvc:PieChart>
-            <!-- Second Pie Chart -->
-
-            <!-- Third Pie Chart -->
             <lvc:PieChart Width="300" Height="188" Margin="20,0,0,0">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries Title="Cancelled" Values="{Binding CancelledOrders}" Fill="Gray"/>
@@ -100,4 +90,3 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
 
     </Grid>
 </Window>
-

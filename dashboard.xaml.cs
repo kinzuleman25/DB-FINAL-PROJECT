@@ -1,8 +1,5 @@
 ﻿using LiveCharts;
-using LiveCharts.Wpf;
-using Microsoft.SqlServer.Server;
 using System.Windows;
-using System.Windows.Navigation;
 
 namespace WpfApp6
 {
@@ -15,48 +12,56 @@ namespace WpfApp6
         public ChartValues<double> PendingProjects { get; set; }
         public ChartValues<double> OrdersValues { get; set; }
 
+        public object TotalRevenueText { get; private set; }
+        public object TotalClientsText { get; private set; }
+        public object TotalProjects { get; private set; }
+
         public dashboard()
         {
             InitializeComponent();
 
-            // Initialize Bar Chart Data (Revenue per Month)
-            RevenueValues = new ChartValues<double> { 50000, 70000, 80000, 60000, 90000 };
+            // Initialize Chart Values
+            RevenueValues = new ChartValues<double> { 10000, 15000, 20000 };
+            CompletedProjects = new ChartValues<double> { 10, 12, 14 };
+            InProgressProjects = new ChartValues<double> { 4, 3, 2 };
+            PendingProjects = new ChartValues<double> { 1, 2, 3 };
+            OrdersValues = new ChartValues<double> { 5, 8, 10 };
 
-            // Initialize Pie Chart Data (Project Status)
-            CompletedProjects = new ChartValues<double> { 30 };  // 30 Completed Projects
-            InProgressProjects = new ChartValues<double> { 15 }; // 15 In Progress
-            PendingProjects = new ChartValues<double> { 5 };     // 5 Pending Projects
+            // Initialize dashboard summary
+            TotalRevenueText = "$45,000";
+            TotalClientsText = "120";
+            TotalProjects = "26";
 
-            // Initialize Line Chart Data (Orders per Month)
-            OrdersValues = new ChartValues<double> { 120, 150, 100, 130, 160 };
-
-            // Set DataContext for Data Binding
+            // Set DataContext for data binding in XAML
             DataContext = this;
         }
+
         private void DashboardButton_Click(object sender, RoutedEventArgs e)
         {
             dashboard dashboardWindow = new dashboard();
             dashboardWindow.Show();
-            this.Close(); // Optional: Close the current window if needed
+            this.Close();
         }
+
         private void ManageProjectsButton_Click(object sender, RoutedEventArgs e)
         {
             manage_projects manageProjectsWindow = new manage_projects();
             manageProjectsWindow.Show();
-            this.Close(); // Close current window if needed
+            this.Close();
         }
 
         private void InventoryButton_Click(object sender, RoutedEventArgs e)
         {
             inventory inventoryWindow = new inventory();
             inventoryWindow.Show();
-            this.Close(); // Close current window if needed
+            this.Close();
         }
+
         private void ProjectHistoryButton_Click(object sender, RoutedEventArgs e)
         {
             project_history projectHistoryWindow = new project_history();
             projectHistoryWindow.Show();
-            this.Close(); // Hide the dashboard instead of closing
+            this.Close();
         }
 
         private void PaymentManagmentButton_Click(object sender, RoutedEventArgs e)
@@ -79,20 +84,11 @@ namespace WpfApp6
             feedbacksWindow.Show();
             this.Close();
         }
+
         private void ProfileButton_Click(object sender, RoutedEventArgs e)
         {
             Profileowner profileWindow = new Profileowner();
-            profileWindow.Show(); // Opens the window
-
-            // Optionally close the current window
-            // this.Close();
+            profileWindow.Show();
         }
-
-
     }
-
 }
-
-
-
-

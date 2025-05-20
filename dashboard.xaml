@@ -38,6 +38,7 @@
             <Label.Effect>
                 <DropShadowEffect/>
             </Label.Effect>
+            
         </Label>
         <Label Content="Total Revenue" FontSize="28" Foreground="#2c4375" FontFamily="Global Serif"  Background="#EDEDED" HorizontalAlignment="Left" Height="93" Margin="766,42,0,0"  FontWeight="Bold" VerticalAlignment="Top" Width="320">
             <Label.Effect>
