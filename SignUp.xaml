@@ -16,17 +16,17 @@
         <Label Content="Sign Up" HorizontalAlignment="Left" Margin="904,118,0,0" VerticalAlignment="Top" Height="68" Width="216" Foreground="#FF2C4375" FontFamily="Global Serif" FontSize="48" FontWeight="Bold"/>
         <Label HorizontalAlignment="Left" Margin="475,248,0,0" VerticalAlignment="Top" Height="44" Width="226" FontFamily="Global Serif" FontSize="36" FontWeight="Bold" Foreground="#FF2C4375"/>
 
-        <Label Content="Name" HorizontalAlignment="Left" Margin="333,300,0,0" VerticalAlignment="Top" Width="237" Height="52" FontFamily="Global Serif" FontSize="30" FontWeight="Bold" Foreground="#FF2C4375"/>
+        <Label Content="First Name" HorizontalAlignment="Left" Margin="333,300,0,0" VerticalAlignment="Top" Width="237" Height="52" FontFamily="Global Serif" FontSize="30" FontWeight="Bold" Foreground="#FF2C4375"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Margin="333,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="491" Height="50" Background="White" FontFamily="Global Serif" FontSize="28" Foreground="#FF2C4375" BorderBrush="#FF2C4375" BorderThickness="3" TextChanged="TextBox_TextChanged_4"/>
 
 
-        <Label Content="Email" HorizontalAlignment="Left" Margin="1148,300,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontFamily="Global Serif" FontWeight="Bold" Foreground="#FF2C4375"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" Margin="1148,300,0,0" VerticalAlignment="Top" Height="50" Width="200" FontSize="30" FontFamily="Global Serif" FontWeight="Bold" Foreground="#FF2C4375"/>
         <TextBox x:Name="EmailTextBox" HorizontalAlignment="Left" Margin="1148,377,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="492" Height="52" BorderThickness="3" FontSize="28" FontFamily="Global Serif" Foreground="#FF2C4375" BorderBrush="#FF2C4375"/>
 
-        <Label Content="Phone Number" HorizontalAlignment="Left" Margin="333,451,0,0" VerticalAlignment="Top" Width="258" Height="52" FontSize="30" FontFamily="Global Serif" Foreground="#FF2C4375" FontWeight="Bold"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="333,451,0,0" VerticalAlignment="Top" Width="258" Height="52" FontSize="30" FontFamily="Global Serif" Foreground="#FF2C4375" FontWeight="Bold"/>
         <TextBox x:Name="PhoneTextBox" HorizontalAlignment="Left" Margin="333,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="495" Height="54" BorderBrush="#FF2C4375" BorderThickness="3" FontSize="28" FontFamily="Global Serif" Foreground="#FF2C4375" TextChanged="TextBox_TextChanged_2"/>
 
-        <Label Content="CNIC" HorizontalAlignment="Left" Margin="1148,457,0,0" VerticalAlignment="Top" Width="258" Height="52" Foreground="#FF2C4375" FontFamily="Global Serif" FontSize="30" FontWeight="Bold"/>
+        <Label Content="Phone Number" HorizontalAlignment="Left" Margin="1148,457,0,0" VerticalAlignment="Top" Width="258" Height="52" Foreground="#FF2C4375" FontFamily="Global Serif" FontSize="30" FontWeight="Bold"/>
         <TextBox x:Name="CNICTextBox" HorizontalAlignment="Left" Margin="1148,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="492" Height="54" BorderBrush="#FF2C4375" BorderThickness="3" FontFamily="Global Serif" FontSize="28" Foreground="#FF2C4375"/>
 
         <Label Content="Address" HorizontalAlignment="Left" Margin="330,611,0,0" VerticalAlignment="Top" Width="258" Height="52" FontFamily="Global Serif" FontSize="30" FontWeight="Bold" Foreground="#FF2C4375"/>
@@ -52,5 +52,6 @@
             </RichTextBox.Clip>
         </RichTextBox>
         <Label Content="Add Photo" HorizontalAlignment="Left" Margin="1647,277,0,0" VerticalAlignment="Top" Height="49" Width="176" Foreground="#FF2C4375" FontFamily="Global Serif" FontSize="32" FontWeight="Bold" RenderTransformOrigin="0.42,0.049"/>
+        <TextBox x:Name="ClientIDTextBox" HorizontalAlignment="Center" Margin="0,541,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" Height="64" BorderBrush="#FF2C4375" BorderThickness="3" FontSize="28" FontFamily="Global Serif" Foreground="#FF2C4375" TextChanged="TextBox_TextChanged_2"/>
     </Grid>
 </Window>

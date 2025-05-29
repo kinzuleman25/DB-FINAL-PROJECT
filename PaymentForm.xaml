@@ -10,11 +10,9 @@
     <Grid>
         <Grid Background="#EAEAEA" Width="300" HorizontalAlignment="Left">
             <StackPanel VerticalAlignment="Top">
-                <!-- Profile Section -->
                 <Ellipse Width="100" Height="100" Fill="Gray" Margin="100,20,100,10"/>
                 <Button Content="OWAIS SHEHZAD" FontSize="16" FontFamily="Global Serif"
 Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
-                <!-- Yellow Buttons -->
                 <Button Background="#FFC107" BorderThickness="0" Content="DASHBOARD"  Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="DashboardButton_Click" FontWeight="Bold"/>
                 <Button Background="#FFC107"  BorderThickness="0"  Content="MANAGE PROJECTS"  Foreground="#2c4375" FontFamily="Global Serif" Height="50" Margin="0,50,0,0" FontSize="24" Click="ManageProjectsButton_Click" FontWeight="Bold"/>
                 <Button Background="#FFC107"  BorderThickness="0"  Content="INVENTORY" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="InventoryButton_Click" FontWeight="Bold"/>
@@ -24,6 +22,7 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
                 <Button Background="#FFC107"  BorderThickness="0"  Content="FEEDBACKS" Height="50" Foreground="#2c4375" FontFamily="Global Serif" Margin="0,50,0,0" FontSize="24" Click="FeedbacksButton_Click" FontWeight="Bold"/>
             </StackPanel>
         </Grid>
+
         <!-- Main Content -->
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Width="800" Margin="692,240,0,0" Height="718">
             <TextBlock Text="PAYMENT UPGRADATION"
@@ -34,24 +33,20 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
             <!-- Form Fields -->
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Enter Client ID:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                <TextBox x:Name="ClientIdTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
 
                 <TextBlock Text="Enter Order ID:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
-
-
+                <TextBox x:Name="OrderIdTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
 
                 <TextBlock Text="Total Amount:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                <TextBox x:Name="TotalAmountTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Paid Amount:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
                 <TextBlock Text="Due Amount:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                <TextBox x:Name="DueAmountTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
             </StackPanel>
-            <CheckBox Content="All Dues Cleared" Height="48" FontFamily="Global Serif" Foreground="#2C4375" FontSize="26" Width="756" RenderTransformOrigin="0.5,1.268"/>
 
-            <!-- Submit Button -->
+            <CheckBox x:Name="DuesClearedCheckBox" Content="All Dues Cleared" Height="48" FontFamily="Global Serif" Foreground="#2C4375" FontSize="26" Width="756" RenderTransformOrigin="0.5,1.268"/>
+
             <Button Content="UPDATE"
              Width="245" Height="50"
              Background="#FFC107"

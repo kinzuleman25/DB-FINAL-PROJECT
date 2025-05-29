@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:WpfApp6"
         mc:Ignorable="d"
         Title="EmployeeTasks" Height="1024" Width="1920">
@@ -19,45 +19,37 @@
         </Grid>
 
         <!-- Calendar in Top Right Corner -->
-        <Calendar HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,49,818,0" Width="257" Height="166" RenderTransformOrigin="0.5,0.5">
-            <Calendar.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.168"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Calendar.RenderTransform>
+        <Calendar HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,49,818,0" Width="257" Height="166">
             <Calendar.LayoutTransform>
                 <ScaleTransform ScaleX="2.5" ScaleY="2.5"/>
             </Calendar.LayoutTransform>
         </Calendar>
+
+        <!-- Pie Chart -->
         <lvc:PieChart Name="PieChart" Margin="1155,49,-61,516">
             <lvc:PieChart.Series>
-                <lvc:PieSeries Title="Completed"
-                 Values="{Binding CompletedTasks}"
-                 Fill="#2c4375"/>
-                <lvc:PieSeries Title="In Progress"
-                 Values="{Binding PendingTasks}"
-                 Fill="Orange"/>
-                <lvc:PieSeries Title="Pending"
-                 Values="{Binding AssignedTasks}"
-                 Fill="Gray"/>
+                <lvc:PieSeries Title="Completed" Values="{Binding CompletedTasks}" Fill="#2c4375"/>
+                <lvc:PieSeries Title="Pending" Values="{Binding AssignedTasks}" Fill="Gray"/>
             </lvc:PieChart.Series>
         </lvc:PieChart>
+
+        <!-- Assigned Tasks Rectangle and Label -->
         <Rectangle HorizontalAlignment="Left" Height="382" Margin="421,598,0,0" Stroke="#2c4375" VerticalAlignment="Top" Width="404" StrokeThickness="4"/>
+        <Label Content="Assigned Tasks" Foreground="#2c4375" FontFamily="Global Serif" FontSize="48" Height="72" Margin="421,521,1150,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        <!-- StackPanel to host dynamic checkboxes -->
+        <ScrollViewer Margin="430,610,0,0" VerticalAlignment="Top" Height="360" Width="380" HorizontalAlignment="Left">
+            <StackPanel Name="AssignedTasksPanel"/>
+        </ScrollViewer>
+
+        <!-- Completed Tasks Rectangle and Label -->
         <Rectangle HorizontalAlignment="Left" Height="382" Margin="997,593,0,0" Stroke="#2c4375" VerticalAlignment="Top" Width="424" StrokeThickness="4"/>
-        <Label Content="Assigned Tasks"  Foreground="#2c4375" FontFamily="Global Serif" FontSize="48"  Height="72" Margin="421,521,1150,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Completed Tasks"  Foreground="#2c4375" FontFamily="Global Serif" FontSize="48"  Height="72" Margin="1014,516,516,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <CheckBox Content="Design Overview"  FontSize="24" HorizontalAlignment="Left" Margin="466,630,0,0" VerticalAlignment="Top" Height="39" Width="270"/>
-        <CheckBox Content="Prepare Workplace"  FontSize="24" HorizontalAlignment="Left" Margin="466,713,0,0" VerticalAlignment="Top" Height="39" Width="270"/>
-        <CheckBox Content="Gather Stock"  FontSize="24" HorizontalAlignment="Left" Margin="466,674,0,0" VerticalAlignment="Top" Height="39" Width="270"/>
-
-
-
-
-
+        <Label Content="Completed Tasks" Foreground="#2c4375" FontFamily="Global Serif" FontSize="48" Height="72" Margin="1014,516,516,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ScrollViewer Margin="1006,610,0,0" VerticalAlignment="Top" Height="360" Width="400" HorizontalAlignment="Left">
+            <StackPanel Name="CompletedTasksPanel"/>
+        </ScrollViewer>
 
     </Grid>
 </Window>
+
 

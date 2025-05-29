@@ -14,7 +14,7 @@ namespace WpfApp6
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            var mainWindow = new project_history();
+            var mainWindow = new OrderRequests();
             mainWindow.Show();
         }
     }

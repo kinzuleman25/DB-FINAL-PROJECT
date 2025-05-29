@@ -11,7 +11,7 @@ namespace WpfApp6
     public partial class inventory : Window
     {
         public ChartValues<double> StockValues { get; set; }
-        public List<string> ProductLabels { get; set; }
+        public List<string> MaterialLabels { get; set; }
 
         public inventory()
         {
@@ -33,20 +33,24 @@ namespace WpfApp6
             string query = "SELECT * FROM inventory";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
 
-            // Bind DataTable directly to DataGrid
+            // Display full table in DataGrid (s.no will appear too)
             InventoryDataGrid.ItemsSource = dt.DefaultView;
 
             // Prepare chart data
             StockValues = new ChartValues<double>();
-            ProductLabels = new List<string>();
+            MaterialLabels = new List<string>();
 
             foreach (DataRow row in dt.Rows)
             {
-                if (int.TryParse(row["quantity"].ToString(), out int quantity))
+                // instock is VARCHAR in DB, we parse it to int for the chart
+                if (int.TryParse(row["instock"].ToString(), out int instock))
                 {
-                    StockValues.Add(quantity);
-                    ProductLabels.Add(row["product"].ToString());
+                    StockValues.Add(instock);
+                    MaterialLabels.Add(row["material"].ToString());
                 }
+
+                // You can access s.no if needed
+                int sno = Convert.ToInt32(row["s.no"]);
             }
         }
 
@@ -83,7 +87,7 @@ namespace WpfApp6
 
         private void OrderRequestsButton_Click(object sender, RoutedEventArgs e)
         {
-            new order_requests().Show(); this.Close();
+            new OrderRequests().Show(); this.Close();
         }
 
         private void FeedbacksButton_Click(object sender, RoutedEventArgs e)

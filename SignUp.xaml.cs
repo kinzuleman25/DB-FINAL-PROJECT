@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using MySql.Data.MySqlClient;
 
 namespace WpfApp6
 {
@@ -43,12 +45,42 @@ namespace WpfApp6
                 return;
             }
 
-            // Success: open next window
-            MessageBox.Show("Registration complete!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            try
+            {
+                using (var conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+                    string insertQuery = @"
+                INSERT INTO client 
+                (FirstName, LastName, Username, Password, PhoneNumber, Gender, Address, ClientID)
+                VALUES
+                (@FirstName, @LastName, @Username, @Password, @PhoneNumber, @Gender, @Address, @ClientID)";
 
-            home1 home = new home1();
-            home.Show();
-            this.Close();
+                    using (var cmd = new MySqlCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@FirstName", NameTextBox.Text);
+                        cmd.Parameters.AddWithValue("@LastName", EmailTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Username", PhoneTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Password", ConfirmPasswordTextBox.Text);
+                        cmd.Parameters.AddWithValue("@PhoneNumber", CNICTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Gender", GenderTextBox.Text);
+                        cmd.Parameters.AddWithValue("@Address", AddressTextBox.Text);
+                        cmd.Parameters.AddWithValue("@ClientID", ClientIDTextBox.Text);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Registration complete!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                home1 home = new home1();
+                home.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
     }
 }

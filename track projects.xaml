@@ -18,7 +18,7 @@
                             FontFamily="Global Serif" BorderThickness="0" Padding="20" Margin="1656,28,44,904" FontWeight="Bold" Click="MyProfileButton_Click"/>
         <Label Content="Smajor Glazing" Background="Transparent" Foreground="#2C4375" FontSize="32"
                     FontFamily="Global Serif" BorderThickness="0" Padding="20"  Margin="94,25,1518,895" FontWeight="Bold"/>
-        <DataGrid ItemsSource="{Binding OrdersList}" AutoGenerateColumns="False" Margin="35,360,44,72">
+        <DataGrid Name="paymentsDataGrid" ItemsSource="{Binding OrdersList}" AutoGenerateColumns="False" Margin="35,360,44,72">
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#FFC107"/>
@@ -31,12 +31,11 @@
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="S.NO" Binding="{Binding ClientName}" Width="*"/>
-                <DataGridTextColumn Header="Order ID" Binding="{Binding ClientID}" Width="*"/>
-                <DataGridTextColumn Header="Started on " Binding="{Binding ArticleNo}" Width="*"/>
-                <DataGridTextColumn Header="Ended on" Binding="{Binding Material}" Width="*"/>
-                <DataGridTextColumn Header="Amount Paid" Binding="{Binding Size}" Width="*"/>
+                <DataGridTextColumn Header="S.NO" Binding="{Binding SerialNo}" Width="*" />
+                <DataGridTextColumn Header="Order ID" Binding="{Binding ProjectId}" Width="*" />
+                <DataGridTextColumn Header="Amount Paid" Binding="{Binding TotalAmount}" Width="*" />
             </DataGrid.Columns>
+
         </DataGrid>
 
 

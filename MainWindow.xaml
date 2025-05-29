@@ -76,7 +76,7 @@
 
                 <!-- Feedback Reason Box -->
                 <TextBox Height="100" Width="500" Margin="0,40,0,50" Background="#E5E5E5"
-                         Text="Please tell us your reasons for giving this score here....."
+                         Text="Rate out of 10..."
                          Foreground="Black" FontSize="16" TextChanged="TextBox_TextChanged"/>
 
                 <!-- Improvement Comments Box -->

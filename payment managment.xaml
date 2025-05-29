@@ -28,7 +28,7 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
         </Grid>
 
         <!-- Data Grid -->
-        <DataGrid ItemsSource="{Binding OrdersList}" AutoGenerateColumns="False" Margin="345,65,50,149">
+        <DataGrid ItemsSource="{Binding PaymentsList}" AutoGenerateColumns="False" Margin="345,65,50,149" Name="PaymentsDataGrid">
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#FFC107"/>
@@ -41,11 +41,11 @@ Foreground="#2c4375" HorizontalAlignment="Center" Click="ProfileButton_Click"/>
             </DataGrid.Resources>
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Client ID" Binding="{Binding ClientName}" Width="*"/>
-                <DataGridTextColumn Header="Order ID" Binding="{Binding ClientID}" Width="*"/>
-                <DataGridTextColumn Header="Total Amount" Binding="{Binding ArticleNo}" Width="*"/>
-                <DataGridTextColumn Header="Paid Amount" Binding="{Binding Material}" Width="*"/>
-                <DataGridTextColumn Header="Due Amount" Binding="{Binding Size}" Width="*"/>
+                <DataGridTextColumn Header="Project ID" Binding="{Binding ProjectId}" Width="*"/>
+                <DataGridTextColumn Header="Client ID" Binding="{Binding ClientId}" Width="*"/>
+                <DataGridTextColumn Header="Total Amount" Binding="{Binding TotalAmount}" Width="*"/>
+                <DataGridTextColumn Header="Due Amount" Binding="{Binding DueAmount}" Width="*"/>
+                <DataGridTextColumn Header="Payment Date" Binding="{Binding PaymentDate}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="UPDATE PAYMENTS"  Background="#FFC107" Foreground="#2c4375" FontFamily="Global Serif" HorizontalAlignment="Left" Height="62"  FontSize="34" Margin="1502,910,0,0" VerticalAlignment="Top" Width="372" FontWeight="Bold"  Click="UpdatePayments_Click"/>

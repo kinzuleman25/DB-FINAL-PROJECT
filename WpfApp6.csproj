@@ -201,8 +201,8 @@
     <Compile Include="manage projects.xaml.cs">
       <DependentUpon>manage projects.xaml</DependentUpon>
     </Compile>
-    <Compile Include="order requests.xaml.cs">
-      <DependentUpon>order requests.xaml</DependentUpon>
+    <Compile Include="OrderRequests.xaml.cs">
+      <DependentUpon>OrderRequests.xaml</DependentUpon>
     </Compile>
     <Compile Include="Orders.xaml.cs">
       <DependentUpon>Orders.xaml</DependentUpon>
@@ -285,7 +285,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="order requests.xaml">
+    <Page Include="OrderRequests.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -350,7 +350,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

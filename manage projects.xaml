@@ -38,13 +38,21 @@
                 </TransformGroup>
             </UIElement.RenderTransform>
         </Label>
-        <Label Background="#EAEAEA" HorizontalAlignment="Left" Height="325" Margin="350,614,0,0"  VerticalAlignment="Top" Width="384"/>
-        <Label Background="#EAEAEA" HorizontalAlignment="Left" Height="320" Margin="786,619,0,0"  VerticalAlignment="Top" Width="384"/>
         <Label Content="Upcoming Projects" FontSize="32" Foreground="#2c4375"  FontFamily="Global Serif" HorizontalAlignment="Left" Height="63" Margin="350,43,0,0" VerticalAlignment="Top" Width="268"/>
         <Label Content="Project Onboard" FontSize="32" Foreground="#2c4375"  FontFamily="Global Serif" HorizontalAlignment="Left" Height="64" Margin="388,407,0,0" VerticalAlignment="Top" Width="230"/>
-        <Label Content="Due tasks" FontSize="32" Foreground="#2c4375"  FontFamily="Global Serif" HorizontalAlignment="Left" Height="108" Margin="369,565,0,0" VerticalAlignment="Top" Width="230"/>
-        <Label Content="Assigned Tasks" FontSize="32" Foreground="#2c4375"  FontFamily="Global Serif" HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="230" Margin="790,565,0,0"/>
+        <DataGrid x:Name="ProjectDataGrid"
+          AutoGenerateColumns="False"
+          CanUserAddRows="True"
+          CanUserDeleteRows="True"
+          Margin="383,555,690,63"
+          ItemsSource="{Binding ProjectEntries}">
 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TaskId" Binding="{Binding TaskId}" Width="*" />
+                <DataGridTextColumn Header="ClientId" Binding="{Binding ClientId}" Width="*" />
+                <DataGridTextColumn Header="Task" Binding="{Binding Deadline}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Calendar Name="MyCalendar" Width="175" Height="166"
           HorizontalAlignment="Left" VerticalAlignment="Top"
           Margin="1336,43,0,0">
@@ -52,7 +60,7 @@
                 <ScaleTransform ScaleX="2.9" ScaleY="2.9"/>
             </Calendar.LayoutTransform>
         </Calendar>
-        <lvc:PieChart Name="PieChart" Margin="1149,529,-55,36">
+        <lvc:PieChart Name="PieChart" Margin="1235,555,10,10">
             <lvc:PieChart.Series>
                 <lvc:PieSeries Title="Completed"
                         Values="{Binding CompletedProjects}"
@@ -65,6 +73,16 @@
                         Fill="Gray"/>
             </lvc:PieChart.Series>
         </lvc:PieChart>
+        <Button Content="Save Tasks"
+        Width="150"
+        Height="22"
+        HorizontalAlignment="Left"
+        Margin="388,976,0,0"
+        VerticalAlignment="Top"
+        Background="#2c4375"
+        Foreground="White"
+        FontWeight="Bold"
+        Click="SaveTasksButton_Click"/>
 
 
     </Grid>

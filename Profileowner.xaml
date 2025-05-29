@@ -14,15 +14,14 @@
 
         <Label Content="Contact:" HorizontalAlignment="Left" Margin="182,0,0,0" VerticalAlignment="Center" Width="238" Height="47" FontFamily="Global Serif" FontSize="36" FontWeight="Bold" Foreground="#FF2C4375"/>
 
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="182,595,0,0" VerticalAlignment="Top" Width="238" Height="47" FontFamily="Global Serif" FontSize="36" Foreground="#FF2C4375" FontWeight="Bold"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="182,595,0,0" VerticalAlignment="Top" Width="238" Height="47" FontFamily="Global Serif" FontSize="36" Foreground="#FF2C4375" FontWeight="Bold"/>
 
         <Label Content="Address:" HorizontalAlignment="Left" Margin="182,726,0,0" VerticalAlignment="Top" Width="238" Height="47" FontSize="36" FontFamily="Global Serif" FontWeight="Bold" Foreground="#FF2C4375"/>
 
-        <Label Content="Completed Projects:" HorizontalAlignment="Left" Margin="64,853,0,0" VerticalAlignment="Top" Width="330" Height="48" FontFamily="Global Serif" FontSize="36" FontWeight="Bold" Foreground="#FF2C4375"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="493,349,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" Foreground="#FF2C4375" FontSize="36" FontFamily="Global Serif" BorderBrush="#FF2C4375" BorderThickness="3,3,3,3"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="493,464,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" BorderBrush="#FF2C4375" BorderThickness="3,3,3,3" Foreground="#FF2C4375" FontSize="36" FontFamily="Global Serif"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="493,595,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" BorderBrush="#FF2C4375" BorderThickness="3,3,3,3" FontSize="36" FontFamily="Global Serif" Foreground="#FF2C4375"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="493,723,0,0" VerticalAlignment="Top" Width="648" Height="76" Foreground="#FFE5E5E5" Background="#FFE5E5E5" BorderBrush="#FF2C4375" FontSize="36" FontFamily="Global Serif" BorderThickness="3,3,3,3"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="493,837,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" Foreground="#FF2C4375" BorderBrush="#FF2C4375" FontFamily="Global Serif" FontSize="36" BorderThickness="3,3,3,3"/>
+
+        <Label  x:Name="NameLabel" Content="" HorizontalAlignment="Left" Margin="493,349,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" Foreground="#FF2C4375" FontSize="36" FontFamily="Global Serif" BorderBrush="#FF2C4375" BorderThickness="3,3,3,3"/>
+        <Label  x:Name="ContactLabel" Content="" HorizontalAlignment="Left" Margin="493,464,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" BorderBrush="#FF2C4375" BorderThickness="3,3,3,3" Foreground="#FF2C4375" FontSize="36" FontFamily="Global Serif"/>
+        <Label  x:Name="UsernameLabel" Content="" HorizontalAlignment="Left" Margin="493,595,0,0" VerticalAlignment="Top" Width="648" Height="76" Background="#FFE5E5E5" BorderBrush="#FF2C4375" BorderThickness="3,3,3,3" FontSize="36" FontFamily="Global Serif" Foreground="#FF2C4375"/>
+        <Label  x:Name="AddressLabel" Content="Label" HorizontalAlignment="Left" Margin="493,723,0,0" VerticalAlignment="Top" Width="648" Height="76" Foreground="#FFE5E5E5" Background="#FFE5E5E5" BorderBrush="#FF2C4375" FontSize="36" FontFamily="Global Serif" BorderThickness="3,3,3,3"/>
     </Grid>
 </Window>

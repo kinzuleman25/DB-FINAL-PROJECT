@@ -4,7 +4,9 @@
         Title="Order Page"
         Height="1080" Width="1920"
         WindowState="Maximized"
-        Background="White" WindowStartupLocation="CenterScreen">
+        Background="White"
+        Visibility="Visible" 
+        WindowStartupLocation="CenterScreen">
 
     <Grid Width="1920" Height="1081">
         <!-- Navigation Bar -->
@@ -17,18 +19,16 @@
                        Margin="20,0,30,0"
                        DockPanel.Dock="Left"/>
 
-
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,40,0">
                 <Button Content="Home" Background="White" Foreground="#2C4375" FontSize="32"
-            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="Button_Click"/>
+                        FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="Button_Click"/>
                 <Button Content="Projects" Background="White" Foreground="#2C4375" FontSize="32"
-            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold"/>
+                        FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold"/>
                 <Button Content="Feedback" Background="White" Foreground="#2C4375" FontSize="32"
-            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="Button_Click_1"/>
+                        FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="Button_Click_1"/>
                 <Button Content="My profile" Background="White" Foreground="#2C4375" FontSize="32"
-            FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="MyProfileButton_Click"/>
+                        FontFamily="Global Serif" BorderThickness="0" Padding="10" Width="223" FontWeight="Bold" Click="MyProfileButton_Click"/>
             </StackPanel>
-
         </DockPanel>
 
         <!-- Main Content -->
@@ -41,13 +41,13 @@
             <!-- Form Fields -->
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Enter Article Number:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                <TextBox x:Name="ArticleNumberTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                
+                <TextBlock Text="Enter Client Id:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
+                <TextBox x:Name="ClientIdTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
 
-                <TextBlock Text="Enter Door Size:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
-
-                <TextBlock Text="Select Material:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5" Height="36" RenderTransformOrigin="0.519,0.529"/>
-                <ComboBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10">
+                <TextBlock Text="Select Material:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
+                <ComboBox x:Name="MaterialComboBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10">
                     <ComboBoxItem Content="Wood"/>
                     <ComboBoxItem Content="Aluminum"/>
                     <ComboBoxItem Content="Steel"/>
@@ -55,11 +55,13 @@
                 </ComboBox>
 
                 <TextBlock Text="Time/Date for Project Completion:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                <TextBox x:Name="DateTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
 
                 <TextBlock Text="Enter other Specific Information:" FontFamily="Global Serif" Foreground="#2C4375" FontSize="31" Margin="0,0,0,5"/>
-                <TextBox Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
+                <TextBox x:Name="InfoTextBox" Background="#E5E5E5" FontSize="16" Height="40" Margin="0,0,0,10"/>
             </StackPanel>
+
+            
 
             <!-- Submit Button -->
             <Button Content="Submit Order"
@@ -70,7 +72,8 @@
                     FontFamily="Global Serif"
                     FontWeight="Bold"
                     Margin="20,30,0,0"
-                    HorizontalAlignment="Right"/>
+                    HorizontalAlignment="Right"
+                    Click="SubmitOrder_Click"/>
         </StackPanel>
     </Grid>
 </Window>
